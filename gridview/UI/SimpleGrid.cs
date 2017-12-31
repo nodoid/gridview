@@ -10,14 +10,14 @@ namespace gridview
         public SimpleGrid()
         {
             NavigationPage.SetHasNavigationBar(this, false);
-            if (Device.OS == TargetPlatform.iOS)
+            if (Device.RuntimePlatform == Device.iOS)
                 Padding = new Thickness(0, 20, 0, 0);
             GenerateUi();
         }
 
         void GenerateUi()
         {
-            var imageNames = new List<string>{ "chicken1.png", "chicken2.png", "chicken3.png", "chicken4.png", "chicken5.png", "chicken6.png" };
+            var imageNames = new List<string> { "chicken1.png", "chicken2.png", "chicken3.png", "chicken4.png", "chicken5.png", "chicken6.png" };
             var internalStack = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
@@ -51,7 +51,7 @@ namespace gridview
                 {
                     VerticalOptions = LayoutOptions.Start,
                     Source = pl
-                };       
+                };
 
                 var lblRange = new Label
                 {
@@ -70,12 +70,12 @@ namespace gridview
                     BackgroundColor = Color.White,
                     Spacing = 0.4,
                     Children =
-                    { 
+                    {
                         new StackLayout
                         {
                             VerticalOptions = LayoutOptions.CenterAndExpand,
                             Children =
-                            { imgProduct, 
+                            { imgProduct,
                                 new StackLayout
                                 {
                                     Padding = new Thickness(0, -4, 0, 0),
@@ -99,7 +99,7 @@ namespace gridview
             internalStack.Children.Add(grid);
 
             Content = new StackLayout
-            { 
+            {
                 Orientation = StackOrientation.Vertical,
                 VerticalOptions = LayoutOptions.StartAndExpand,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
